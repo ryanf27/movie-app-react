@@ -11,6 +11,13 @@ const Main = () => {
   const [urlEndpoint, seturlEndpoint] = useState(url);
   const [search, setSearch] = useState();
 
+  const toggleMenu = () => {
+    const menuToggle = document.querySelector(".menuToggle");
+    const navigation = document.querySelector(".navigation");
+    menuToggle.classList.toggle("active");
+    navigation.classList.toggle("active");
+  };
+
   useEffect(() => {
     axios
       .get(urlEndpoint, {
@@ -74,6 +81,7 @@ const Main = () => {
             <span>M</span>ovie App
           </h2>
         </div>
+        <div classNamee="menuToggle" onClick={toggleMenu}></div>
         <nav>
           <ul>
             {arr.map((value, index) => {
