@@ -24,7 +24,7 @@ const Main = () => {
         headers: {
           Authorization: `Bearer ${APIKEY}`,
         },
-      }) // Use Axios instead of fetch
+      })
       .then((response) => {
         setMovieData(response.data.results);
       })
